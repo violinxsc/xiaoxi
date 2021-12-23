@@ -69,7 +69,6 @@
     (function(){
         // 监听页面鼠标点击
         document.onmousedown = function(event){ 
-            console.log("鼠标点击")
             var audio = document.getElementById("music1");
             if (audio.paused) { //判断当前的状态是否为暂停，若是则点击播放，否则暂停
                 audio.play();
