@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Merry Christmas</title>
-        <!-- <embed src="爱很简单.mp3" hidden="true" autostart="true" loop="true"> -->
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
         <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
@@ -18,9 +18,9 @@
     </head>
     <body>
         <style>
-            /* audio {
+            audio{
                 display: none;
-            } */
+            }
         </style>
         <div id="main">
             <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
@@ -57,10 +57,9 @@
                 </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=29750751&auto=1&height=66"></iframe>
-            <!-- <audio id="music1" preload="auto" controls="controls" loop="loop" autoplay="autoplay">
+            <audio id="music1" preload="auto" controls="controls" loop="loop" autoplay="autoplay">
                 <source src="爱很简单.mp3" type="audio/mpeg" />
-            </audio> -->
+            </audio>
         </div>
     
     <script>
@@ -68,6 +67,15 @@
 
     <script>
     (function(){
+        // 监听页面鼠标点击
+        document.onmousedown = function(event){ 
+            console.log("鼠标点击")
+            var audio = document.getElementById("music1");
+            if (audio.paused) { //判断当前的状态是否为暂停，若是则点击播放，否则暂停
+                audio.play();
+            }
+        }
+
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
